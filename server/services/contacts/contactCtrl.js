@@ -1,6 +1,10 @@
 const kue = require('kue');
 
-const queue = kue.createQueue();
+const REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379/0';
+
+const queue = kue.createQueue({
+  redis: REDIS_URL,
+});
 
 const contactCtrl = {};
 

@@ -2,7 +2,11 @@ const kue = require('kue');
 const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
-const queue = kue.createQueue();
+const REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379/0';
+
+const queue = kue.createQueue({
+  redis: REDIS_URL,
+});
 const subject = 'Hello from Dittio!';
 
 const contactJobs = queue.process('contact', (job, done) => {
