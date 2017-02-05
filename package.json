@@ -1,0 +1,41 @@
+{
+  "name": "dittio-home",
+  "version": "0.0.1",
+  "author": "Matt Alecock, Edward Park",
+  "scripts": {
+    "start": "node server/index.js",
+    "start:dev": "nodemon server/index.js"
+  },
+  "license": "MIT",
+  "devDependencies": {
+    "babel-eslint": "^7.1.1",
+    "bootstrap": "^3.3.7",
+    "browser-sync": "^2.13.0",
+    "eslint": "^3.15.0",
+    "eslint-config-airbnb": "^14.0.0",
+    "eslint-plugin-import": "^2.2.0",
+    "eslint-plugin-jsx-a11y": "^4.0.0",
+    "eslint-plugin-react": "^6.9.0",
+    "font-awesome": "^4.6.3",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "^2.0.10",
+    "gulp-header": "^1.8.7",
+    "gulp-less": "^3.1.0",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^2.3.2",
+    "gulp-uglify": "^1.5.4",
+    "jquery": "^1.11.3"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/parkedwards/info-app.git"
+  },
+  "dependencies": {
+    "body-parser": "^1.16.0",
+    "cookie-parser": "^1.4.3",
+    "express": "^4.14.1",
+    "kue": "^0.11.5",
+    "redis": "^2.6.5",
+    "sendgrid": "^4.7.1"
+  }
+}
