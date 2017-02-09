@@ -3,4 +3,4 @@ const contactCtrl = require('./contactCtrl');
 
 const contactRoute = module.exports = express.Router();
 
-contactRoute.post('/', contactCtrl.submitForm);
+contactRoute.post('/', contactCtrl.submitForm, contactCtrl.saveContact);
