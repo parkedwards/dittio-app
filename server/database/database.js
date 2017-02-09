@@ -1,14 +1,16 @@
 const pg = require('pg');
 
+const { PG_USER, PG_PW, PG_DB, PG_HOST, PG_PORT, PG_MAX, PG_IDLE } = process.env;
+
 // maybe destructure
 const pool = new pg.Pool({
-  user: process.env.PG_USER,
-  password: process.env.PG_PW,
-  database: process.env.PG_DB,
-  host: process.env.PG_HOST,
-  port: process.env.PG_PORT,
-  max: process.env.PG_MAX,
-  idleTimeoutMillis: process.env.PG_IDLE,
+  user: PG_USER,
+  password: PG_PW,
+  database: PG_DB,
+  host: PG_HOST,
+  port: PG_PORT,
+  max: PG_MAX,
+  idleTimeoutMillis: PG_IDLE,
 });
 
 pool.connect((err) => {
@@ -16,3 +18,5 @@ pool.connect((err) => {
   
   else console.log('Successfully connected to dittiodb!');
 });
+
+module.exports = pool;
