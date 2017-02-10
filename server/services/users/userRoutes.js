@@ -1,3 +1,7 @@
 const express = require('express');
+const userCtrl = require('./userCtrl');
 
-const contactRoute = module.exports = express.Router();
+const userRoute = module.exports = express.Router();
+
+userRoute.post('/login');
+userRoute.post('/signup');
