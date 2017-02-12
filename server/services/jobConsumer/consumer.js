@@ -25,15 +25,9 @@ const contactJobs = queue.process('contact', (job, done) => {
     sg.API(request, (err, res) => {
       if (err) {
         console.error(err);
-        done();
-      } else {
-        console.log('================================');
-        console.log(res.statusCode);
-        console.log(res.body);
-        console.log(res.headers);
-        console.log(`sent email to ${job.data.email}`);
-        done();
+        return done(new Error(err));
       }
+      done();
     });
   }, 2000);
 });
