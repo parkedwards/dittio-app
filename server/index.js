@@ -5,6 +5,8 @@ const path = require('path');
 const logger = require('morgan');
 const dotenv = require('dotenv').config();
 
+const { PORT } = require('./config');
+
 const app = express();
 
 // Listener for Kue processing - likely going to remove
@@ -32,7 +34,7 @@ app.all('*', (req, res) => {
   res.status(404).end();
 });
 
-const PORT = process.env.PORT || 3000;
+
 app.listen(PORT, () => {
   console.log(`ditt.io up and running on port ${PORT}!`);
 });
