@@ -4,11 +4,17 @@
   "author": "Matt Alecock, Edward Park",
   "scripts": {
     "start": "node server/index.js",
-    "start:dev": "nodemon server/index.js"
+    "start:dev": "nodemon server/index.js",
+    "build": "webpack -w"
   },
   "license": "MIT",
   "devDependencies": {
+    "babel-core": "^6.22.1",
     "babel-eslint": "^7.1.1",
+    "babel-loader": "^6.2.10",
+    "babel-preset-es2015": "^6.22.0",
+    "babel-preset-react": "^6.22.0",
+    "babel-preset-stage-1": "^6.22.0",
     "bootstrap": "^3.3.7",
     "browser-sync": "^2.13.0",
     "eslint": "^3.15.0",
@@ -24,21 +30,32 @@
     "gulp-rename": "^1.2.2",
     "gulp-sass": "^2.3.2",
     "gulp-uglify": "^1.5.4",
-    "jquery": "^1.11.3"
+    "jquery": "^1.11.3",
+    "jsdom": "^9.11.0",
+    "webpack": "^2.2.1",
+    "webpack-dev-server": "^2.3.0"
   },
   "repository": {
     "type": "git",
     "url": "https://github.com/parkedwards/info-app.git"
   },
   "dependencies": {
+    "axios": "^0.15.3",
     "body-parser": "^1.16.0",
     "cookie-parser": "^1.4.3",
     "dotenv": "^4.0.0",
     "express": "^4.14.1",
     "kue": "^0.11.5",
+    "material-ui": "^0.16.7",
     "morgan": "^1.8.0",
     "pg": "^6.1.2",
+    "react": "^15.4.2",
+    "react-dom": "^15.4.2",
+    "react-redux": "^5.0.2",
     "redis": "^2.6.5",
+    "redux": "^3.6.0",
+    "redux-promise": "^0.5.3",
+    "redux-thunk": "^2.2.0",
     "sendgrid": "^4.7.1"
   }
 }

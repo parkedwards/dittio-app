@@ -2,7 +2,7 @@ const kue = require('kue');
 const helper = require('sendgrid').mail;
 const sg = require('sendgrid')(process.env.SENDGRID_API_KEY);
 
-const REDIS_URL = process.env.REDIS_URL || 'redis://127.0.0.1:6379/0';
+const { REDIS_URL } = require('../../config');
 
 const queue = kue.createQueue({
   redis: REDIS_URL,
@@ -25,15 +25,9 @@ const contactJobs = queue.process('contact', (job, done) => {
     sg.API(request, (err, res) => {
       if (err) {
         console.error(err);
-        done();
-      } else {
-        console.log('================================');
-        console.log(res.statusCode);
-        console.log(res.body);
-        console.log(res.headers);
-        console.log(`sent email to ${job.data.email}`);
-        done();
+        return done(new Error(err));
       }
+      done();
     });
   }, 2000);
 });
