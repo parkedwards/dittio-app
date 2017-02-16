@@ -9,6 +9,12 @@
   var imgUrl = '../img/header/masthead-' + random + '.jpg';
   $('header').css('background-image', 'url(' + imgUrl + ')');
 
+  // login form submission
+  $('#login-form').on('submit', function (event) {
+    event.preventDefault();
+    $.post('/user/login/', $(this).serialize());
+  });
+
   // jQuery for page scrolling feature - requires jQuery Easing plugin
   $('a.page-scroll').bind('click', function (event) {
     var $anchor = $(this);
