@@ -4,7 +4,9 @@ import { createStore, applyMiddleware, combineReducers } from 'redux';
 // import reducers here
 // ----------------------
 
-const rootReducer = combineReducers({});
+const rootReducer = combineReducers({
+  state: (state = {}) => state,
+});
 
 const store = createStore(
   rootReducer,
