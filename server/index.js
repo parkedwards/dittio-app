@@ -28,6 +28,10 @@ app.get('/', (req, res) => {
 });
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
+app.get('/main', (req, res) => {
+  console.log('inside main!');
+  return res.sendFile(path.join(__dirname, '../src/dashboard/index.html'));
+});
 
 // Error catch-all
 app.all('*', (req, res) => {
