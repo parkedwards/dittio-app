@@ -11,6 +11,7 @@ const config = {
     max: 10,
     idleTimeoutMillis: 30000,
   },
+  SESSION_SECRET: process.env.SESSION_SECRET,
 };
 
 module.exports = config;
