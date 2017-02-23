@@ -1,9 +1,11 @@
+const path = require('path');
+
 module.exports = {
   entry: [
     './src/dashboard/index.jsx',
   ],
   output: {
-    path: __dirname,
+    path: path.join(__dirname, '/src/dashboard'),
     publicPath: '/',
     filename: 'bundle.js',
   },

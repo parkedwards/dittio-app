@@ -1,7 +1,6 @@
 const pg = require('pg');
 const { PG_CONFIG } = require('../config');
 
-// maybe destructure
 const pool = new pg.Pool(PG_CONFIG);
 
 pool.connect((err) => {
