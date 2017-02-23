@@ -1,12 +1,8 @@
 const db = require('./userModel');
-
+const passport = require('passport');
 
 const userCtrl = {
-  authenticateUser: (req, res) => {
-    console.log('inside authenticateUser method!');
-    return res.redirect('/main');
-  },
-
+  loginUser: (req, res) => res.status(202).json({ redirect: '/dashboard' }),
 };
 
 module.exports = userCtrl;
