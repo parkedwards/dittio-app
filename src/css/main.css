@@ -11,7 +11,7 @@ body {
   color: #777777;
 }
 .text-primary {
-  color: #fed136;
+  color: #6cc4b9;
 }
 p {
   font-size: 14px;
@@ -28,13 +28,13 @@ a.active {
   outline: none;
 }
 a {
-  color: #fed136;
+  color: #ed4c57;
 }
 a:hover,
 a:focus,
 a:active,
 a.active {
-  color: #fec503;
+  color: #e81e2c;
 }
 h1,
 h2,
@@ -57,8 +57,8 @@ h6 {
 }
 .btn-primary {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #ed4c57;
+  border-color: #ed4c57;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -69,8 +69,8 @@ h6 {
 .btn-primary.active,
 .open .dropdown-toggle.btn-primary {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #e81e2c;
+  border-color: #e51725;
 }
 .btn-primary:active,
 .btn-primary.active,
@@ -92,17 +92,17 @@ fieldset[disabled] .btn-primary:active,
 .btn-primary.disabled.active,
 .btn-primary[disabled].active,
 fieldset[disabled] .btn-primary.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #ed4c57;
+  border-color: #ed4c57;
 }
 .btn-primary .badge {
-  color: #fed136;
+  color: #ed4c57;
   background-color: white;
 }
 .btn-secondary {
   color: white;
-  background-color: #357ae8;
-  border-color: #357ae8;
+  background-color: #6cc4b9;
+  border-color: #6cc4b9;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -113,8 +113,8 @@ fieldset[disabled] .btn-primary.active {
 .btn-secondary.active,
 .open .dropdown-toggle.btn-secondary {
   color: white;
-  background-color: #1860d2;
-  border-color: #175cc9;
+  background-color: #48b5a7;
+  border-color: #46ada0;
 }
 .btn-secondary:active,
 .btn-secondary.active,
@@ -136,17 +136,17 @@ fieldset[disabled] .btn-secondary:active,
 .btn-secondary.disabled.active,
 .btn-secondary[disabled].active,
 fieldset[disabled] .btn-secondary.active {
-  background-color: #357ae8;
-  border-color: #357ae8;
+  background-color: #6cc4b9;
+  border-color: #6cc4b9;
 }
 .btn-secondary .badge {
-  color: #357ae8;
+  color: #6cc4b9;
   background-color: white;
 }
 .btn-xl {
   color: white;
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #f6aa3d;
+  border-color: #f6aa3d;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   font-weight: 700;
@@ -160,8 +160,8 @@ fieldset[disabled] .btn-secondary.active {
 .btn-xl.active,
 .open .dropdown-toggle.btn-xl {
   color: white;
-  background-color: #fec503;
-  border-color: #f6bf01;
+  background-color: #f4950c;
+  border-color: #eb8f0b;
 }
 .btn-xl:active,
 .btn-xl.active,
@@ -183,11 +183,11 @@ fieldset[disabled] .btn-xl:active,
 .btn-xl.disabled.active,
 .btn-xl[disabled].active,
 fieldset[disabled] .btn-xl.active {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #f6aa3d;
+  border-color: #f6aa3d;
 }
 .btn-xl .badge {
-  color: #fed136;
+  color: #f6aa3d;
   background-color: white;
 }
 .navbar-custom {
@@ -195,21 +195,21 @@ fieldset[disabled] .btn-xl.active {
   border-color: transparent;
 }
 .navbar-custom .navbar-brand {
-  color: #fed136;
+  color: #ed4c57;
   font-family: "Kaushan Script", "Helvetica Neue", Helvetica, Arial, cursive;
 }
 .navbar-custom .navbar-brand:hover,
 .navbar-custom .navbar-brand:focus,
 .navbar-custom .navbar-brand:active,
 .navbar-custom .navbar-brand.active {
-  color: #fec503;
+  color: #e81e2c;
 }
 .navbar-custom .navbar-collapse {
   border-color: rgba(255, 255, 255, 0.02);
 }
 .navbar-custom .navbar-toggle {
-  background-color: #fed136;
-  border-color: #fed136;
+  background-color: #ed4c57;
+  border-color: #ed4c57;
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
   text-transform: uppercase;
   color: white;
@@ -217,7 +217,7 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .navbar-toggle:hover,
 .navbar-custom .navbar-toggle:focus {
-  background-color: #fed136;
+  background-color: #ed4c57;
 }
 .navbar-custom .nav li a {
   font-family: "Montserrat", "Helvetica Neue", Helvetica, Arial, sans-serif;
@@ -228,18 +228,18 @@ fieldset[disabled] .btn-xl.active {
 }
 .navbar-custom .nav li a:hover,
 .navbar-custom .nav li a:focus {
-  color: #fed136;
+  color: #ed4c57;
   outline: none;
 }
 .navbar-custom .navbar-nav > .active > a {
   border-radius: 0;
   color: white;
-  background-color: #fed136;
+  background-color: #ed4c57;
 }
 .navbar-custom .navbar-nav > .active > a:hover,
 .navbar-custom .navbar-nav > .active > a:focus {
   color: white;
-  background-color: #fec503;
+  background-color: #e81e2c;
 }
 @media (min-width: 768px) {
   .navbar-custom {
@@ -369,7 +369,7 @@ section h3.section-subheading {
   margin: 0 auto;
 }
 #portfolio .portfolio-item .portfolio-link .portfolio-hover {
-  background: rgba(254, 209, 54, 0.9);
+  background: rgba(237, 76, 87, 0.9);
   position: absolute;
   width: 100%;
   height: 100%;
@@ -477,7 +477,7 @@ section h3.section-subheading {
   height: 80px;
   position: absolute;
   z-index: 100;
-  background-color: #fed136;
+  background-color: #ed4c57;
   color: white;
   border-radius: 100%;
   border: 7px solid #f1f1f1;
@@ -632,7 +632,7 @@ section#contact .form-group textarea.form-control {
   height: 236px;
 }
 section#contact .form-control:focus {
-  border-color: #fed136;
+  border-color: #ed4c57;
   box-shadow: none;
 }
 section#contact ::-webkit-input-placeholder {
@@ -701,7 +701,7 @@ ul.social-buttons li a {
 ul.social-buttons li a:hover,
 ul.social-buttons li a:focus,
 ul.social-buttons li a:active {
-  background-color: #fed136;
+  background-color: #ed4c57;
 }
 .btn:focus,
 .btn:active,
@@ -785,11 +785,11 @@ ul.social-buttons li a:active {
 }
 ::-moz-selection {
   text-shadow: none;
-  background: #fed136;
+  background: #ed4c57;
 }
 ::selection {
   text-shadow: none;
-  background: #fed136;
+  background: #ed4c57;
 }
 img::selection {
   background: transparent;
@@ -798,5 +798,5 @@ img::-moz-selection {
   background: transparent;
 }
 body {
-  webkit-tap-highlight-color: #fed136;
+  webkit-tap-highlight-color: #ed4c57;
 }
