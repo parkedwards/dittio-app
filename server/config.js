@@ -4,7 +4,7 @@ const config = {
   REDIS_URL: process.env.REDIS_URL || 'redis://127.0.0.1:6379/0',
   PG_CONFIG: {
     host: process.env.PG_HOST,
-    user: process.env.USER,
+    user: process.env.PG_USER,
     password: process.env.PG_PW,
     database: process.env.PG_DB,
     port: process.env.PG_PORT,

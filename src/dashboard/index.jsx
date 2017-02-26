@@ -1,7 +1,7 @@
 import React from 'react';
 import { render } from 'react-dom';
 
-import { Root } from './containers';
+import { Root } from './components';
 import store from './store/index';
 
 render(
