@@ -2,7 +2,7 @@
   "use strict"; // Start of use strict
 
   // random header image generator
-  var size = 10;
+  var size = 8;
   var random = Math.floor(size * Math.random());
   var imgUrl = '../img/header/masthead-' + random + '.jpg';
   $('header').css('background-image', 'url(' + imgUrl + ')');

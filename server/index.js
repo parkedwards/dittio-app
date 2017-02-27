@@ -6,9 +6,10 @@ const path = require('path');
 const logger = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
-const dotenv = require('dotenv').config();
 
+const dotenv = require('dotenv').config();
 const { PORT, SESSION_SECRET } = require('./config');
+
 require('./services/jobConsumer/consumer')();
 require('./util/passport')(passport);
 
@@ -32,23 +33,22 @@ const userRoutes = require('./services/users/userRoutes')(passport);
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
+app.get('/intake', (req, res) => {
+  res.sendFile(path.join(__dirname, '../src/intake.html'));
+});
 app.get('/dashboard', (req, res, next) => {
   if (req.isAuthenticated()) {
     next();
   } else {
     res.redirect('/');
   }
-}, (req, res) => {
-  return res.sendFile(path.join(__dirname, '../src/dashboard/index.html'));
-});
+}, (req, res) => res.sendFile(path.join(__dirname, '../src/dashboard/index.html')));
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
 
 
 // Error catch-all
-app.all('*', (req, res) => {
-  res.status(404).end();
-});
+app.all('*', (req, res) => res.status(404).end());
 
 
 app.listen(PORT, () => {
