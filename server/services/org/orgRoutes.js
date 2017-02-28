@@ -8,4 +8,4 @@ orgRoutes.get('/?', orgCtrl.validateIntake, (req, res) => {
   res.sendFile(path.join(__dirname, '../../../src/intake.html'));
 });
 
-orgRoutes.get('/addOrg?', orgCtrl.addOrg);
+orgRoutes.get('/add?', orgCtrl.addOrg);
