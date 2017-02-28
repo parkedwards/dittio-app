@@ -27,14 +27,12 @@ app.use(express.static(path.join(__dirname, '../src')));
 // Service-based routing import
 const contactRoutes = require('./services/contacts/contactRoutes');
 const userRoutes = require('./services/users/userRoutes')(passport);
+const orgRoutes = require('./services/org/orgRoutes');
 
 
 // REST Gateways
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../src/index.html'));
-});
-app.get('/intake', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/intake.html'));
 });
 app.get('/dashboard', (req, res, next) => {
   if (req.isAuthenticated()) {
@@ -43,12 +41,13 @@ app.get('/dashboard', (req, res, next) => {
     res.redirect('/');
   }
 }, (req, res) => res.sendFile(path.join(__dirname, '../src/dashboard/index.html')));
+app.use('/intake', orgRoutes);
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
 
 
 // Error catch-all
-app.all('*', (req, res) => res.status(404).end());
+app.all('*', (req, res) => res.status(404).end('Page Not Found!'));
 
 
 app.listen(PORT, () => {
