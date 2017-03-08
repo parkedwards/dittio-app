@@ -1,11 +1,13 @@
 import React from 'react';
 
-const App = () => {
-  return (
-    <div>
-      Hello World!
-    </div>
-  );
-};
+import TopNav from './TopNav';
+import LeftNav from './LeftNav';
+
+const App = () => (
+  <div>
+    <TopNav />
+    <LeftNav />
+  </div>
+);
 
 export default App;
