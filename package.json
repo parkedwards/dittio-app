@@ -3,8 +3,8 @@
   "version": "0.0.1",
   "author": "Matt Alecock, Edward Park",
   "scripts": {
-    "start": "node server/index.js",
-    "start:dev": "nodemon server/index.js",
+    "start": "nodemon server/index.js",
+    "dev": "webpack-dev-server --inline --hot",
     "build": "webpack -w"
   },
   "license": "MIT",
