@@ -34,13 +34,14 @@ const orgRoutes = require('./services/org/orgRoutes');
 app.get('/', (req, res) => {
   res.sendFile(path.join(__dirname, '../src/index.html'));
 });
-app.get('/dashboard', (req, res, next) => {
-  if (req.isAuthenticated()) {
-    next();
-  } else {
-    res.redirect('/');
-  }
-}, (req, res) => res.sendFile(path.join(__dirname, '../src/dashboard/index.html')));
+// app.get('/dashboard', (req, res, next) => {
+//   if (req.isAuthenticated()) {
+//     next();
+//   } else {
+//     return res.redirect('/');
+//   }
+// }, (req, res) => res.sendFile(path.join(__dirname, '../src/dashboard/index.html')));
+
 app.use('/intake', orgRoutes);
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
