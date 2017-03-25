@@ -1,12 +1,6 @@
 (function ($) {
   "use strict"; // Start of use strict
 
-  // random header image generator
-  var size = 3;
-  var random = Math.floor(size * Math.random());
-  var imgUrl = '../img/header/masthead-' + random + '.jpg';
-  $('header').css('background-image', 'url(' + imgUrl + ')');
-
   // login form submission
   $('#login-form').on('submit', function (event) {
     event.preventDefault();
