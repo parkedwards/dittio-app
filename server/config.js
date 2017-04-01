@@ -1,6 +1,22 @@
+const {
+  NODE_ENV,
+  PORT,
+  SESSION_SECRET,
+  FSAK_type: type,
+  FSAK_project_id: project_id,
+  FSAK_private_key: private_key,
+  FSAK_client_email: client_email,
+  FSAK_client_id: client_id,
+  FSAK_auth_uri: auth_uri,
+  FSAK_token_uri: token_uri,
+  FSAK_auth_provider: auth_provider,
+  FSAK_auth_provider_x509_cert_url: auth_provider_x509_cert_url,
+  FSAK_client_x509_cert_url: client_x509_cert_url,
+} = process.env;
+
 const config = {
-  NODE_ENV: process.env.NODE_ENV,
-  PORT: process.env.PORT || 3000,
+  NODE_ENV,
+  PORT: PORT || 3000,
   REDIS_URL: process.env.REDIS_URL || 'redis://127.0.0.1:6379/0',
   PG_CONFIG: {
     host: process.env.PG_HOST,
@@ -11,7 +27,19 @@ const config = {
     max: 10,
     idleTimeoutMillis: 30000,
   },
-  SESSION_SECRET: process.env.SESSION_SECRET,
+  SESSION_SECRET,
+  SERVICE_ACCOUNT_KEY: {
+    type,
+    project_id,
+    private_key,
+    client_email,
+    client_id,
+    auth_uri,
+    token_uri,
+    auth_provider,
+    auth_provider_x509_cert_url,
+    client_x509_cert_url,
+  },
 };
 
 module.exports = config;
