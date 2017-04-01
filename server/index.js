@@ -13,7 +13,7 @@ const { PORT, SESSION_SECRET } = require('./config');
 require('./services/jobConsumer/consumer')();
 require('./util/passport')(passport);
 
-// session handling
+// Session Handling ========================================
 app.use(session({ secret: SESSION_SECRET }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -24,16 +24,23 @@ app.use(bodyParser.urlencoded({ extended: true }), bodyParser.json());
 app.use(express.static(path.join(__dirname, '../src')));
 
 
-// Service-based routing import
+// Importing Service Routes ================================
 const contactRoutes = require('./services/contacts/contactRoutes');
 const userRoutes = require('./services/users/userRoutes')(passport);
 const orgRoutes = require('./services/org/orgRoutes');
 
 
-// REST Gateways
+// REST Gateways ============================================
 app.get('/', (req, res) => {
-  res.sendFile(path.join(__dirname, '../src/index.html'));
+  res.sendFile(path.join(__dirname, '../dist/index.html'));
 });
+
+app.get('/main', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/dashboard.html'));
+});
+
+
+// AUTH NEEDS TO BE FIXED
 // app.get('/dashboard', (req, res, next) => {
 //   if (req.isAuthenticated()) {
 //     next();
@@ -42,14 +49,14 @@ app.get('/', (req, res) => {
 //   }
 // }, (req, res) => res.sendFile(path.join(__dirname, '../src/dashboard/index.html')));
 
+
 app.use('/intake', orgRoutes);
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
 
 
-// Error catch-all
+// Error catch-all ==============================================
 app.all('*', (req, res) => res.status(404).end('Page Not Found!'));
-
 
 app.listen(PORT, () => {
   console.log(`ditt.io up and running on port ${PORT}!`);
