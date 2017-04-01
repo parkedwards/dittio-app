@@ -8,9 +8,13 @@ const passport = require('passport');
 const session = require('express-session');
 
 const dotenv = require('dotenv').config();
-const { PORT, SESSION_SECRET } = require('./config');
+const {
+  PORT,
+  SESSION_SECRET,
+} = require('./config');
 
-require('./services/jobConsumer/consumer')();
+require('./util/fb-auth-init')();
+require('./util/consumer')();
 require('./util/passport')(passport);
 
 // Session Handling ========================================
@@ -23,6 +27,7 @@ app.use(cookieParser());
 app.use(bodyParser.urlencoded({ extended: true }), bodyParser.json());
 app.use(express.static(path.join(__dirname, '../src')));
 
+app.set('view engine', 'ejs');
 
 // Importing Service Routes ================================
 const contactRoutes = require('./services/contacts/contactRoutes');
@@ -36,7 +41,11 @@ app.get('/', (req, res) => {
 });
 
 app.get('/main', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/dashboard.html'));
+  res.render(path.join(__dirname, '../dist/dashboard'));
+});
+
+app.get('/bundle.js', (req, res) => {
+  res.sendFile(path.join(__dirname, '../dist/bundle.js'));
 });
 
 
