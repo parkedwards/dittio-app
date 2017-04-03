@@ -6,7 +6,7 @@ const {
   NODE_ENV,
   PORT,
   SESSION_SECRET,
-
+  
   FB_apiKey: apiKey,
   FB_authDomain: authDomain,
   FB_databaseURL: databaseURL,
@@ -14,7 +14,7 @@ const {
   FB_storageBucket: storageBucket,
   FB_messagingSenderId: messagingSenderId,
 
-  // FSAK_type: type,
+  FSAK_type: type,
   FSAK_project_id: project_id,
   FSAK_private_key: private_key,
   FSAK_client_email: client_email,
