@@ -1,7 +1,19 @@
+
+// =====================================================
+// IMPORTED ENVIRONMENT VARIABLES ======================
+// =====================================================
 const {
   NODE_ENV,
   PORT,
   SESSION_SECRET,
+  
+  FB_apiKey: apiKey,
+  FB_authDomain: authDomain,
+  FB_databaseURL: databaseURL,
+  FB_projectId: projectId,
+  FB_storageBucket: storageBucket,
+  FB_messagingSenderId: messagingSenderId,
+
   FSAK_type: type,
   FSAK_project_id: project_id,
   FSAK_private_key: private_key,
@@ -14,7 +26,11 @@ const {
   FSAK_client_x509_cert_url: client_x509_cert_url,
 } = process.env;
 
-const config = {
+
+// =====================================================
+// EXPORTED CONFIG OBJECT - reference within source code
+// =====================================================
+module.exports = {
   NODE_ENV,
   PORT: PORT || 3000,
   REDIS_URL: process.env.REDIS_URL || 'redis://127.0.0.1:6379/0',
@@ -28,6 +44,14 @@ const config = {
     idleTimeoutMillis: 30000,
   },
   SESSION_SECRET,
+  FB_CONFIG: {
+    apiKey,
+    authDomain,
+    databaseURL,
+    projectId,
+    storageBucket,
+    messagingSenderId,
+  },
   SERVICE_ACCOUNT_KEY: {
     type,
     project_id,
@@ -41,5 +65,3 @@ const config = {
     client_x509_cert_url,
   },
 };
-
-module.exports = config;
