@@ -1,26 +1,16 @@
 const { Router } = require('express');
-const userCtrl = require('./userCtrl');
-const admin = require('firebase-admin');
+const {
+  loginUser,
+  moveToSecret,
+  logoutUser,
+} = require('./userCtrl');
 
-const userRoute = new Router();
+const userRoute = module.exports = new Router();
 
-module.exports = (passport) => {
-  // userRoute.post('/login', passport.authenticate('local-login'), userCtrl.loginUser);
-  userRoute.post('/login', (req, res) => {
+userRoute.post('/login', loginUser, moveToSecret);
 
-    console.log('login route was hit!');
+userRoute.post('/logout', logoutUser);
 
-    const { email, password } = req.body;
-
-    admin.auth().getUserByEmail(email)
-      .then((retrievedUser) => {
-        console.log(retrievedUser.toJSON());
-      });
-  });
-
-  userRoute.post('/', (req, res) => {
-    console.log('/signup route was hit!');
-  });
-
-  return userRoute;
-};
+userRoute.post('/', (req, res) => {
+  console.log('PLACEHOLDER: SIGNUP ROUTE');
+});
