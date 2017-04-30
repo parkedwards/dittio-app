@@ -1,4 +1,5 @@
 const bcrypt = require('bcrypt');
+
 const SALT_FACTOR = 10;
 
 module.exports = {

@@ -6,6 +6,7 @@ const path = require('path');
 const logger = require('morgan');
 const passport = require('passport');
 const session = require('express-session');
+const request = require('request');
 
 const dotenv = require('dotenv').config();
 const {
@@ -27,7 +28,6 @@ require('./util/passport')(passport);
 // Session Handling + Middleware ============================
 // ==========================================================
 
-const { authenticateSession } = require('./services/users/userCtrl');
 app.use(session({ secret: SESSION_SECRET }));
 app.use(passport.initialize());
 app.use(passport.session());
@@ -44,32 +44,29 @@ app.set('view engine', 'ejs');
 // Importing Service Routes =================================
 // ==========================================================
 
+const indexRoutes = require('./services/index/indexRoutes');
 const contactRoutes = require('./services/contacts/contactRoutes');
 const userRoutes = require('./services/users/userRoutes');
 const orgRoutes = require('./services/org/orgRoutes');
 
 
 // ==========================================================
-// REST Gateways ============================================
+// API Gateway ==============================================
 // ==========================================================
 
-app.get('/', (req, res) => {
-  // res.sendFile(path.join(__dirname, '../dist/index.html'));
-  res.render(path.join(__dirname, '../dist/index'));
+app.post('/nba', (req, res) => {
+
+  request({
+    method: 'post',
+    url: 'http://localhost:3001',
+    body: req.body,
+    json: true,
+  }, (err, response, body) => {
+    return res.status(200).json(response);
+  });
 });
 
-app.get('/login', authenticateSession, (req, res) => {
-  res.render(path.join(__dirname, '../dist/login'));
-});
-
-app.get('/main', authenticateSession, (req, res) => {
-  res.render(path.join(__dirname, '../dist/dashboard'));
-});
-
-app.get('/bundle.js', (req, res) => {
-  res.sendFile(path.join(__dirname, '../dist/bundle.js'));
-});
-
+app.use('/', indexRoutes);
 app.use('/intake', orgRoutes);
 app.use('/contact', contactRoutes);
 app.use('/user', userRoutes);
